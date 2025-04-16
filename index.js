@@ -55,6 +55,7 @@ app.post("/try-on", async (req, res) => {
             headers: {
                 "x-api-key": apiKey,
             },
+            responseType: "arraybuffer",
         });
 
         const imageBuffer = response.data; // dados binários
