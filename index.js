@@ -1,14 +1,14 @@
-require('dotenv').config();
-
 import express from "express";
 import axios from "axios";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import dotenv from 'dotenv';
 
 const app = express();
 app.use(express.json());
+dotenv.config();
 
 const apiKey = process.env.API_KEY;
 
