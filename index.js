@@ -57,7 +57,11 @@ app.post("/try-on", async (req, res) => {
             },
         });
 
-        res.json(response.data);
+        const imageBuffer = response.data; // dados binários
+
+        const base64Image = Buffer.from(imageBuffer, "binary").toString("base64");
+
+        res.json({ image: base64Image });;
         console.log(response.data);
     } catch (error) {
         console.error("Erro:", error.response?.data || error.message);
